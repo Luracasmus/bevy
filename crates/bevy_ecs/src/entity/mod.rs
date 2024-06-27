@@ -1155,7 +1155,7 @@ mod tests {
     #[test]
     fn entity_display() {
         let entity = Entity::from_raw(42);
-        let string = format!("{}", entity);
+        let string = format!("{entity}");
         assert!(string.contains("42"));
         assert!(string.contains("v1"));
     }

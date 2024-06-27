@@ -955,7 +955,7 @@ impl AssetProcessor {
         let mut log = self.data.log.write().await;
         *log = match ProcessorTransactionLog::new().await {
             Ok(log) => Some(log),
-            Err(err) => panic!("Failed to initialize asset processor log. This cannot be recovered. Try restarting. If that doesn't work, try deleting processed asset folder. {}", err),
+            Err(err) => panic!("Failed to initialize asset processor log. This cannot be recovered. Try restarting. If that doesn't work, try deleting processed asset folder. {err}"),
         };
     }
 }

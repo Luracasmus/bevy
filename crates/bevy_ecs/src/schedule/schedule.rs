@@ -314,16 +314,14 @@ impl Schedule {
 
         let Some(&a_id) = self.graph.system_set_ids.get(&a.intern()) else {
             panic!(
-                "Could not mark system as ambiguous, `{:?}` was not found in the schedule.
+                "Could not mark system as ambiguous, `{a:?}` was not found in the schedule.
                 Did you try to call `ambiguous_with` before adding the system to the world?",
-                a
             );
         };
         let Some(&b_id) = self.graph.system_set_ids.get(&b.intern()) else {
             panic!(
-                "Could not mark system as ambiguous, `{:?}` was not found in the schedule.
+                "Could not mark system as ambiguous, `{b:?}` was not found in the schedule.
                 Did you try to call `ambiguous_with` before adding the system to the world?",
-                b
             );
         };
 

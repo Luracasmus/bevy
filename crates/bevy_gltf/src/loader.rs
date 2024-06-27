@@ -1991,7 +1991,7 @@ mod test {
             GltfNode {
                 index,
                 asset_label: crate::GltfAssetLabel::Node(index),
-                name: format!("l{}", index),
+                name: format!("l{index}"),
                 children: vec![],
                 mesh: None,
                 transform: bevy_transform::prelude::Transform::IDENTITY,

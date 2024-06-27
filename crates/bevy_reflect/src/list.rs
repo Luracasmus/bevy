@@ -204,8 +204,7 @@ impl DynamicList {
         if let Some(represented_type) = represented_type {
             assert!(
                 matches!(represented_type, TypeInfo::List(_)),
-                "expected TypeInfo::List but received: {:?}",
-                represented_type
+                "expected TypeInfo::List but received: {represented_type:?}"
             );
         }
 

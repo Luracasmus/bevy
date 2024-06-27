@@ -348,6 +348,7 @@ impl AppStatus {
             ExampleModel::Fox => SWITCH_TO_SPHERE_HELP_TEXT,
         };
 
+        #[allow(clippy::uninlined_format_args)]
         Text::from_section(
             format!(
                 "{}\n{}\n{}\n{}\n{}",

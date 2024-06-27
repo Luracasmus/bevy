@@ -627,7 +627,7 @@ impl App {
     pub fn sub_app(&self, label: impl AppLabel) -> &SubApp {
         let str = label.intern();
         self.get_sub_app(label).unwrap_or_else(|| {
-            panic!("No sub-app with label '{:?}' exists.", str);
+            panic!("No sub-app with label '{str:?}' exists.");
         })
     }
 
@@ -639,7 +639,7 @@ impl App {
     pub fn sub_app_mut(&mut self, label: impl AppLabel) -> &mut SubApp {
         let str = label.intern();
         self.get_sub_app_mut(label).unwrap_or_else(|| {
-            panic!("No sub-app with label '{:?}' exists.", str);
+            panic!("No sub-app with label '{str:?}' exists.");
         })
     }
 

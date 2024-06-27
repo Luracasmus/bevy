@@ -1412,7 +1412,7 @@ mod tests {
                                 );
                             }
                         }
-                        _ => panic!("Unexpected error type {:?}", read_error),
+                        _ => panic!("Unexpected error type {read_error}"),
                     },
                     _ => panic!("Unexpected error type {:?}", error.error),
                 }

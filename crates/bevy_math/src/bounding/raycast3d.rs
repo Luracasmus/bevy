@@ -230,17 +230,12 @@ mod tests {
                 4.996,
             ),
         ] {
-            let case = format!(
-                "Case:\n  Test: {:?}\n  Volume: {:?}\n  Expected distance: {:?}",
-                test, volume, expected_distance
-            );
+            let case = format!("Case:\n  Test: {test:?}\n  Volume: {volume:?}\n  Expected distance: {expected_distance:?}");
             assert!(test.intersects(volume), "{}", case);
             let actual_distance = test.sphere_intersection_at(volume).unwrap();
             assert!(
                 (actual_distance - expected_distance).abs() < EPSILON,
-                "{}\n  Actual distance: {}",
-                case,
-                actual_distance
+                "{case}\n  Actual distance: {actual_distance}"
             );
 
             let inverted_ray = RayCast3d::new(test.origin, -test.direction, test.max);
@@ -269,9 +264,7 @@ mod tests {
         ] {
             assert!(
                 !test.intersects(volume),
-                "Case:\n  Test: {:?}\n  Volume: {:?}",
-                test,
-                volume,
+                "Case:\n  Test: {test:?}\n  Volume: {volume:?}",
             );
         }
     }
@@ -284,14 +277,11 @@ mod tests {
                 for max in &[0., 1., 900.] {
                     let test = RayCast3d::new(*origin, *direction, *max);
 
-                    let case = format!(
-                        "Case:\n  origin: {:?}\n  Direction: {:?}\n  Max: {}",
-                        origin, direction, max,
-                    );
+                    let case = format!("Case:\n  origin: {origin:?}\n  Direction: {direction:?}\n  Max: {max}",);
                     assert!(test.intersects(&volume), "{}", case);
 
                     let actual_distance = test.sphere_intersection_at(&volume);
-                    assert_eq!(actual_distance, Some(0.), "{}", case,);
+                    assert_eq!(actual_distance, Some(0.), "{case}",);
                 }
             }
         }
@@ -337,17 +327,12 @@ mod tests {
                 1.732,
             ),
         ] {
-            let case = format!(
-                "Case:\n  Test: {:?}\n  Volume: {:?}\n  Expected distance: {:?}",
-                test, volume, expected_distance
-            );
+            let case = format!("Case:\n  Test: {test:?}\n  Volume: {volume:?}\n  Expected distance: {expected_distance:?}");
             assert!(test.intersects(volume), "{}", case);
             let actual_distance = test.aabb_intersection_at(volume).unwrap();
             assert!(
                 (actual_distance - expected_distance).abs() < EPSILON,
-                "{}\n  Actual distance: {}",
-                case,
-                actual_distance
+                "{case}\n  Actual distance: {actual_distance}"
             );
 
             let inverted_ray = RayCast3d::new(test.origin, -test.direction, test.max);
@@ -376,9 +361,7 @@ mod tests {
         ] {
             assert!(
                 !test.intersects(volume),
-                "Case:\n  Test: {:?}\n  Volume: {:?}",
-                test,
-                volume,
+                "Case:\n  Test: {test:?}\n  Volume: {volume:?}",
             );
         }
     }
@@ -391,14 +374,11 @@ mod tests {
                 for max in &[0., 1., 900.] {
                     let test = RayCast3d::new(*origin, *direction, *max);
 
-                    let case = format!(
-                        "Case:\n  origin: {:?}\n  Direction: {:?}\n  Max: {}",
-                        origin, direction, max,
-                    );
+                    let case = format!("Case:\n  origin: {origin:?}\n  Direction: {direction:?}\n  Max: {max}",);
                     assert!(test.intersects(&volume), "{}", case);
 
                     let actual_distance = test.aabb_intersection_at(&volume);
-                    assert_eq!(actual_distance, Some(0.), "{}", case,);
+                    assert_eq!(actual_distance, Some(0.), "{case}",);
                 }
             }
         }
@@ -447,17 +427,12 @@ mod tests {
                 3.,
             ),
         ] {
-            let case = format!(
-                "Case:\n  Test: {:?}\n  Volume: {:?}\n  Expected distance: {:?}",
-                test, volume, expected_distance
-            );
+            let case = format!("Case:\n  Test: {test:?}\n  Volume: {volume:?}\n  Expected distance: {expected_distance:?}");
             assert!(test.intersects(volume), "{}", case);
             let actual_distance = test.aabb_collision_at(*volume).unwrap();
             assert!(
                 (actual_distance - expected_distance).abs() < EPSILON,
-                "{}\n  Actual distance: {}",
-                case,
-                actual_distance
+                "{case}\n  Actual distance: {actual_distance}"
             );
 
             let inverted_ray = RayCast3d::new(test.ray.origin, -test.ray.direction, test.ray.max);
@@ -513,17 +488,12 @@ mod tests {
                 3.677,
             ),
         ] {
-            let case = format!(
-                "Case:\n  Test: {:?}\n  Volume: {:?}\n  Expected distance: {:?}",
-                test, volume, expected_distance
-            );
+            let case = format!("Case:\n  Test: {test:?}\n  Volume: {volume:?}\n  Expected distance: {expected_distance:?}");
             assert!(test.intersects(volume), "{}", case);
             let actual_distance = test.sphere_collision_at(*volume).unwrap();
             assert!(
                 (actual_distance - expected_distance).abs() < EPSILON,
-                "{}\n  Actual distance: {}",
-                case,
-                actual_distance
+                "{case}\n  Actual distance: {actual_distance}"
             );
 
             let inverted_ray = RayCast3d::new(test.ray.origin, -test.ray.direction, test.ray.max);
